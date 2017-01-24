@@ -1,8 +1,13 @@
-script: asdf plugin-test foo https://github.com/vic/asdf-link.git "ls"
+script:
+  - asdf plugin-install perla $PWD
+  - asdf install perla system
+  - ln -s /usr/bin/perl ~/.asdf/installs/perla/system/bin/perla
+  - asdf reshim perla
+  - asdf local perla system
+  - perla -v
 before_script:
   - git clone https://github.com/asdf-vm/asdf.git
   - . asdf/asdf.sh
-  - ls -l /usr/local/bin /usr/bin /bin
 os:
   - linux
   - osx
