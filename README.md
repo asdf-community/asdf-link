@@ -29,6 +29,7 @@ tool you will be selecting versions for. Say `jdk`, `perl`, `android`, etc.
 
 ```shell
 ## READ above before copy-paste this line
+# You can execute this as many times as you want with different names
 $ asdf plugin-add NAME https://github.com/vic/asdf-link.git
 ```
 
