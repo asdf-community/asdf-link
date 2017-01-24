@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+installer() {
+  local install_type=$1
+  local version=$2
+  local install_path=$3
+
+  mkdir -p $install_path/bin
+
+  echo "Link your system binaries to $install_path/bin"
+}
+
+installer $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH

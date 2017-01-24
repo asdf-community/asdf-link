@@ -1,0 +1,8 @@
+language: java
+script: asdf plugin-test clojure https://github.com/vic/asdf-clojure.git "clojure -e '(clojure-version)'"
+before_script:
+  - git clone https://github.com/asdf-vm/asdf.git
+  - . asdf/asdf.sh
+os:
+  - linux
+  - osx
