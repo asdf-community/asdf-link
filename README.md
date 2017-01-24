@@ -80,7 +80,7 @@ documentaion for more on managing versions.
 
 The advantage of using this plugin is that even if you have *lots* of binaries on `/usr/local/bin`,
 by hand-picking and linking them inside the plugin's `bin/` directory, you get shims for free. The
-following is the travis test we use, linking perl.
+following is the [travis test](https://github.com/vic/asdf-link/blob/master/.travis.yml) we use, linking perl.
 
 ```shell
 # perla is spanish for perl
