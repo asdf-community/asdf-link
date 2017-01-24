@@ -1,5 +1,5 @@
 script:
-  - asdf plugin-install perla https://github.com/vic/asdf-link.git
+  - asdf plugin-add perla $PWD
   - asdf install perla system
   - ln -s /usr/bin/perl ~/.asdf/installs/perla/system/bin/perla
   - asdf reshim perla
