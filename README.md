@@ -1,6 +1,6 @@
 # asdf-link
 
-Generic plugin for using system tools with [asdf](https://github.com/asdf-vm/asdf).
+Generic plugin for versioning system tools with [asdf](https://github.com/asdf-vm/asdf).
 
 ## About
 
@@ -29,27 +29,52 @@ tool you will be selecting versions for. Say `jdk`, `perl`, `android`, etc.
 
 ```shell
 ## READ above before copy-paste this line
-# asdf plugin-add NAME https://github.com/vic/asdf-link.git
+$ asdf plugin-add NAME https://github.com/vic/asdf-link.git
 ```
 
 This can be anything, from now on, these examples will be for `jdk`.
 
-`asdf plugin-add jdk https://github.com/vic/asdf-link.git`
+```shell
+$ asdf plugin-add jdk https://github.com/vic/asdf-link.git
+```
 
 ## Usage
 
 Now if you execute `asdf list-all jdk` you will notice it will only say `system`.
 That is because we cannot possibly know which versions are available. And actually,
 this plugin will *let you install ANY version* you give to it. So it's up to you
-to use a meaningful version. In my OSX system, the vendor installed JDKs are
-listed in `/Library/Java/JavaVirtualMachines`
+to use a meaningful version. 
 
+In my case, I have the following jdks `1.8` which I downloaded from the java
+website and `1.9` which was installed with `brew install Caskroom/versions/java9-beta`
+
+```shell
+$ ls /Library/Java/JavaVirtualMachines/
+jdk1.8.0_111.jdk jdk-9.jdk
 ```
-$ ls -l /Library/Java/JavaVirtualMachines/
+
+To use them, lets tell ASDF about their existance with:
+
+```shell
 $ asdf install jdk 1.8
+Link your system binaries to /Users/vic/.asdf/installs/jdk/1.8/bin
+
+$ asdf install jdk 1.9
+Link your system binaries to /Users/vic/.asdf/installs/jdk/1.9/bin
 ```
 
+As previously mentioned, this plugin lets you install *any* version,
+actually it just creates a `bin/` directory for you. The idea is that
+we link (hence the plugin name) our versioned binaries into that `bin/` directory directory.
 
-Check [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to install & manage versions of Clojure.
+````shell
+# linking all the java tools into the 1.9 versioned bin/
+$ ln -vs /Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/bin/* /Users/vic/.asdf/installs/jdk/1.9/bin/
 
-Upon installation a `clojure` executable will be set by `asdf` on your path.
+# after this, just reshim
+$ asdf reshim jdk
+```
+
+And we are done, you can create a `.tool-versions` in the current directory
+by using `asdf local jdk 1.9`. See the [asdf](https://github.com/asdf-vm/asdf)
+documentaion for more on managing versions.
