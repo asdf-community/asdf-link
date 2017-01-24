@@ -9,7 +9,7 @@ is hosted at a private location, or perhaps things that you already installed wi
 a vendor package manager, eg `brew` on OSX which supports many installed versions).
 
 Or maybe things that can only be installed with some GUI interaction and for which 
-creating an asdf installer would be a bit complicated, eg the Android tools.
+creating an asdf installer would be a bit complicated, eg Android tools, AWS or Google Cloud tools.
 
 For example, many systems already come with `perl` installed (two versions on my system).
 Or on OSX where you can install the java tools via many methods, like the official package 
