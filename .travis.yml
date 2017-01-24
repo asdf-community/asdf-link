@@ -1,7 +1,8 @@
 script:
+  - echo $PWD
   - asdf plugin-add perla $PWD
   - asdf install perla system
-  - ln -s /usr/bin/perl ~/.asdf/installs/perla/system/bin/perla
+  - ln -s /usr/bin/perl asdf/installs/perla/system/bin/perla
   - asdf reshim perla
   - asdf local perla system
   - perla -v
