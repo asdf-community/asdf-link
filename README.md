@@ -56,9 +56,6 @@ jdk1.8.0_111.jdk jdk-9.jdk
 To use them, lets tell ASDF about their existance with:
 
 ```shell
-$ asdf install jdk 1.8
-Link your system binaries to /Users/vic/.asdf/installs/jdk/1.8/bin
-
 $ asdf install jdk 1.9
 Link your system binaries to /Users/vic/.asdf/installs/jdk/1.9/bin
 ```
@@ -78,3 +75,18 @@ $ asdf reshim jdk
 And we are done, you can create a `.tool-versions` in the current directory
 by using `asdf local jdk 1.9`. See the [asdf](https://github.com/asdf-vm/asdf)
 documentaion for more on managing versions.
+
+
+The advantage of using this plugin is that even if you have *lots* of binaries on `/usr/local/bin`,
+by hand-picking and linking them inside the plugin's `bin/` directory, you get shims for free. The
+following is the travis test we use, linking perl.
+
+```shell
+# perla is spanish for perl
+$ asdf plugin-add perla https://github.com/vic/asdf-link.git
+$ asdf install perla 5.18
+$ ln -s /usr/bin/perl5.18 ~/.asdf/installs/perla/5.18/bin/perla
+$ asdf reshim
+$ asdf local perla 5.18
+$ perla -v
+```
