@@ -1,4 +1,6 @@
 # asdf-link
+[![help maintain this lib](https://img.shields.io/badge/looking%20for%20maintainer-DM%20%40vborja-663399.svg)](https://twitter.com/vborja)
+
 
 Generic plugin for versioning system tools with [asdf](https://github.com/asdf-vm/asdf).
 
