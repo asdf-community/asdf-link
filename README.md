@@ -67,7 +67,7 @@ As previously mentioned, this plugin lets you install *any* version,
 actually it just creates a `bin/` directory for you. The idea is that
 we link (hence the plugin name) our versioned binaries into that `bin/` directory directory.
 
-````shell
+```shell
 # linking all the java tools into the 1.9 versioned bin/
 $ ln -vs /Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/bin/* /Users/vic/.asdf/installs/jdk/1.9/bin/
 
