@@ -43,7 +43,7 @@ $ asdf plugin-add jdk https://github.com/vic/asdf-link.git
 
 ## Usage
 
-Now if you execute `asdf list-all jdk` you will notice it will only say `system`.
+Now if you execute `asdf list-all jdk` you will notice it will only say `link`.
 That is because we cannot possibly know which versions are available. And actually,
 this plugin will *let you install ANY version* you give to it. So it's up to you
 to use a meaningful version. 

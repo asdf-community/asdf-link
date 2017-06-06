@@ -1,10 +1,10 @@
 script:
   - echo $PWD
   - asdf plugin-add perla $PWD
-  - asdf install perla system
+  - asdf install perla foo
   - ln -s /usr/bin/perl asdf/installs/perla/system/bin/perla
   - asdf reshim perla
-  - asdf local perla system
+  - asdf local perla foo
   - perla -v
 before_script:
   - git clone https://github.com/asdf-vm/asdf.git
